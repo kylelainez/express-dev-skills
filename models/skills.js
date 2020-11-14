@@ -18,13 +18,13 @@ const Skills = [
 
 module.exports = {
 	getAllSkills,
-	getSkill
+	addSkill
 };
 
 function getAllSkills() {
 	return Skills;
 }
 
-function getSkill(id) {
-	return Skills.find((el) => el.id === id);
+function addSkill(name, skill) {
+	Skills.find((el) => el.name === name).list.push(skill);
 }
