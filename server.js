@@ -8,11 +8,12 @@ var indexRouter = require('./routes/index');
 var skillsRouter = require('./routes/skills');
 
 var app = express();
-
+const methodOverride = require('method-override');
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+app.use(methodOverride('_method'));
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

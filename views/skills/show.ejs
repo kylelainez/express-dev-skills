@@ -1,6 +1,18 @@
 <h2><%= skill.name %></h2>
 <ul>
 	<% skill.list.forEach(element => { %>
-	<li><%= element %></li>
+	<li>
+		<%= element %>
+		<a href="/skills/<%= element %>/edit" class="editSvg">
+			<img src="/images/create-black-18dp.svg" />
+		</a>
+		<form
+			method="POST"
+			action="/skills/<%= element %>?_method=DELETE"
+			class="delete"
+		>
+			<button type="submit" class="red">X</button>
+		</form>
+	</li>
 	<% }) %>
 </ul>

@@ -9,3 +9,19 @@ a {
 	padding: 10px;
 	padding-left: 0;
 }
+
+.delete {
+	display: inline;
+}
+
+.red {
+	color: red;
+	height: 1.5rem;
+	width: 1.5rem;
+	padding: 0;
+}
+
+.editSvg {
+	display: inline;
+	text-decoration: none;
+}

@@ -18,7 +18,9 @@ const Skills = [
 
 module.exports = {
 	getAllSkills,
-	addSkill
+	addSkill,
+	deleteSkill,
+	editSkill
 };
 
 function getAllSkills() {
@@ -27,4 +29,22 @@ function getAllSkills() {
 
 function addSkill(name, skill) {
 	Skills.find((el) => el.name === name).list.push(skill);
+}
+
+function deleteSkill(skill) {
+	Skills.forEach((el, i) => {
+		el.list.forEach((elem, j) => {
+			if (elem === skill) Skills[i].list.splice(j, 1);
+		});
+	});
+}
+
+function editSkill(skill, newSkill) {
+	Skills.forEach((el) => {
+		el.list.forEach((elem, idx) => {
+			if (elem === skill) {
+				el.list[idx] = newSkill;
+			}
+		});
+	});
 }
